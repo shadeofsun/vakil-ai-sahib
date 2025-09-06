@@ -1,66 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Vakil.My Design System - Professional Legal Tech Brand */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @layer base {
   :root {
-    /* Clean Professional Palette */
+    /* Brand Colors - Professional Navy & Gold */
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 215 25% 15%;
+
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 215 25% 15%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
-    --primary: 220 87% 48%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Professional Navy */
+    --primary: 215 45% 15%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 215 25% 27%;
-    --muted: 210 40% 98%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 160 84% 39%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
+    --primary-glow: 215 45% 25%;
+
+    /* Secondary - Premium Gold */
+    --secondary: 38 85% 65%;
+    --secondary-foreground: 215 45% 15%;
+
+    /* Muted & Subtle */
+    --muted: 215 15% 97%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Refined Gold */
+    --accent: 38 85% 65%;
+    --accent-foreground: 215 45% 15%;
+
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 87% 48%;
+
+    --border: 215 15% 92%;
+    --input: 215 15% 92%;
+    --ring: 215 45% 15%;
+
+    /* Brand Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 45% 15%) 0%, hsl(215 45% 25%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(38 85% 65%) 0%, hsl(38 75% 55%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(215 15% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(215 25% 15% / 0.1);
+    --shadow-medium: 0 8px 25px -8px hsl(215 25% 15% / 0.15);
+    --shadow-large: 0 20px 40px -15px hsl(215 25% 15% / 0.2);
+    --shadow-glow: 0 0 0 1px hsl(38 85% 65% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
     --radius: 0.5rem;
 
-    /* Professional Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 87% 48%) 0%, hsl(160 84% 39%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 87% 48%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 40% 98%) 100%);
+    --sidebar-background: 0 0% 98%;
 
-    /* Clean Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --sidebar-foreground: 240 5.3% 26.1%;
 
-    /* Smooth Transitions */
-    --transition: all 0.2s ease-in-out;
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 28% 17%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 215 28% 21%;
+
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 215 28% 21%;
+
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 215 28% 17%;
-    --secondary: 215 28% 21%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 215 28% 21%;
-    --muted-foreground: 217 10% 64%;
-    --accent: 142 76% 36%;
-    --accent-foreground: 215 28% 17%;
-    --border: 217 19% 35%;
-    --input: 217 19% 35%;
-    --ring: 217 91% 60%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -68,61 +119,146 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* RTL Support for Persian */
+  .rtl {
     direction: rtl;
-  }
-}
-
-@layer components {
-  /* Professional Typography */
-  .font-persian {
-    font-family: 'Vazirmatn', sans-serif;
-  }
-  
-  /* Clean Button Styles */
-  .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:opacity-90 focus:ring-2 focus:ring-primary/20;
-  }
-  
-  .btn-outline {
-    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus:ring-2 focus:ring-primary/20;
+    text-align: right;
   }
 
-  /* Clean Card Styles */
-  .card-clean {
-    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200;
+  .ltr {
+    direction: ltr;
+    text-align: left;
   }
 
-  /* Section Spacing */
-  .section-padding {
-    @apply py-16 md:py-20;
-  }
-}
-
-@layer utilities {
-  .shadow-clean {
-    box-shadow: var(--shadow);
-  }
-  
-  .shadow-clean-md {
-    box-shadow: var(--shadow-md);
-  }
-  
-  .shadow-clean-lg {
-    box-shadow: var(--shadow-lg);
-  }
-
-  .bg-gradient-primary {
-    background: var(--gradient-primary);
-  }
-  
+  /* Custom Utility Classes */
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
+  .bg-gradient-premium {
+    background: var(--gradient-premium);
+  }
+
   .bg-gradient-subtle {
     background: var(--gradient-subtle);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Persian Font Support */
+  .font-persian {
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Enhanced animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Better button focus */
+  .focus\:ring-4:focus {
+    box-shadow: 0 0 0 4px hsl(var(--ring) / 0.3);
+  }
+
+  /* Backdrop effects */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Text selection */
+  ::selection {
+    background-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--accent-foreground));
+  }
+
+  /* Focus visible */
+  .focus-visible:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Image optimization */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Mobile optimizations */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  /* Improved mobile spacing */
+  .mobile-section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .mobile-card-spacing {
+    @apply p-4 sm:p-6;
+  }
+
+  /* Better mobile typography */
+  .mobile-h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .mobile-h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .mobile-h3 {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  /* Mobile-first layouts */
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .mobile-flex {
+    @apply flex flex-col sm:flex-row;
   }
 }

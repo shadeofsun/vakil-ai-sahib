@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NewNavigation from "./NewNavigation";
-import NewHeroSection from "./NewHeroSection";
+import Navigation from "./Navigation";
+import HeroSection from "./HeroSection";
 import ServicesSection from "./ServicesSection";
 import HowItWorksSection from "./HowItWorksSection";
 import PricingSection from "./PricingSection";
@@ -15,9 +15,9 @@ const VakilLandingPage = () => {
 
   return (
     <div className="min-h-screen">
-      <NewNavigation onStartNowClick={() => setIsModalOpen(true)} />
-      <div className="pt-16">
-        <NewHeroSection onStartNowClick={() => setIsModalOpen(true)} />
+      <Navigation onStartNowClick={() => setIsModalOpen(true)} />
+      <div className="pt-16 md:pt-20">
+        <HeroSection onStartNowClick={() => setIsModalOpen(true)} />
         <TrustedBySection />
         <div id="services">
           <ServicesSection />
