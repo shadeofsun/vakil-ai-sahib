@@ -94,7 +94,7 @@ const HeroSection = ({
                 <span className="bg-gradient-hero bg-clip-text text-transparent block mb-2">
                   Vakil.My
                 </span>
-                <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-muted-foreground block font-persian">تنظیم لایحه، اظهارنامه، قرارداد و شکواییه در 10 دقیقه!</span>
+                <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-muted-foreground block font-persian text-right">تنظیم لایحه، اظهارنامه، قرارداد و شکواییه در 10 دقیقه!</span>
               </h1>
               
               <p className="text-lg md:text-xl text-foreground/80 max-w-xl mx-auto lg:mx-0 leading-relaxed font-persian">
