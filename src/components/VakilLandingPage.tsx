@@ -18,10 +18,10 @@ const VakilLandingPage = () => {
       <Navigation onStartNowClick={() => setIsModalOpen(true)} />
       <div className="pt-16 md:pt-20">
         <HeroSection onStartNowClick={() => setIsModalOpen(true)} />
-        <TrustedBySection />
         <div id="services">
           <ServicesSection />
         </div>
+        <TrustedBySection />
         <div id="how-it-works">
           <HowItWorksSection />
         </div>

@@ -8,11 +8,11 @@ interface HeroSectionProps {
 const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
   const services = [
     { name: "دادخواست", icon: FileText, delay: "0s" },
-    { name: "لایحه", icon: Scale, delay: "0.2s" },
-    { name: "شکواییه", icon: MessageSquare, delay: "0.4s" },
-    { name: "قرارداد", icon: Briefcase, delay: "0.6s" },
-    { name: "اظهارنامه", icon: ClipboardList, delay: "0.8s" },
-    { name: "مشاوره", icon: Users, delay: "1s" }
+    { name: "لایحه", icon: Scale, delay: "1.2s" },
+    { name: "شکواییه", icon: MessageSquare, delay: "0.7s" },
+    { name: "قرارداد", icon: Briefcase, delay: "2.1s" },
+    { name: "اظهارنامه", icon: ClipboardList, delay: "0.3s" },
+    { name: "مشاوره", icon: Users, delay: "1.8s" }
   ];
 
   return (
@@ -40,10 +40,15 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                       style={{
                         transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-                        animationDelay: `${index * 0.2}s`
+                        animationDelay: service.delay
                       }}
                     >
-                      <div className="animate-subtle-fade-in">
+                      <div 
+                        className="animate-subtle-fade-in"
+                        style={{
+                          animationDelay: service.delay
+                        }}
+                      >
                         <div className="bg-white shadow-medium rounded-2xl p-5 border border-border/30 hover:border-accent/20 transition-all duration-700 hover:shadow-glow group animate-gentle-orbit">
                           <div className="text-center">
                             <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/10 transition-all duration-500">
@@ -75,7 +80,7 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
           {/* Content Side - Right on Desktop */}
           <div className="lg:col-span-7 text-center lg:text-right space-y-6 order-2">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent-foreground px-4 py-2 rounded-full text-sm font-medium border border-accent/20">
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-primary px-4 py-2 rounded-full text-sm font-medium border border-accent/20">
                 <Zap className="w-4 h-4" />
                 <span className="font-persian">جدیدترین فناوری هوش مصنوعی</span>
               </div>
@@ -89,7 +94,7 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed font-persian">
+              <p className="text-lg md:text-xl text-foreground/80 max-w-xl mx-auto lg:mx-0 leading-relaxed font-persian">
                 خدمات حقوقی سریع، دقیق و حرفه‌ای با هوش مصنوعی و وکلای پایه یک دادگستری
               </p>
 
