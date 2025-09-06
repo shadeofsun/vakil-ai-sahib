@@ -197,37 +197,37 @@
 
   @keyframes gentle-float-1 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    50% { transform: translateY(-3px) translateX(1px); }
+    50% { transform: translateY(-1.5px) translateX(0.5px); }
   }
 
   @keyframes gentle-float-2 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    33% { transform: translateY(2px) translateX(-1px); }
-    66% { transform: translateY(-1px) translateX(1px); }
+    33% { transform: translateY(1px) translateX(-0.5px); }
+    66% { transform: translateY(-0.5px) translateX(0.5px); }
   }
 
   @keyframes gentle-float-3 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    40% { transform: translateY(-2px) translateX(-1px); }
-    80% { transform: translateY(1px) translateX(1px); }
+    40% { transform: translateY(-1px) translateX(-0.5px); }
+    80% { transform: translateY(0.5px) translateX(0.5px); }
   }
 
   @keyframes gentle-float-4 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    30% { transform: translateY(2px) translateX(1px); }
-    70% { transform: translateY(-1px) translateX(0px); }
+    30% { transform: translateY(1px) translateX(0.5px); }
+    70% { transform: translateY(-0.5px) translateX(0px); }
   }
 
   @keyframes gentle-float-5 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    45% { transform: translateY(-2px) translateX(1px); }
-    85% { transform: translateY(2px) translateX(-1px); }
+    45% { transform: translateY(-1px) translateX(0.5px); }
+    85% { transform: translateY(1px) translateX(-0.5px); }
   }
 
   @keyframes gentle-float-6 {
     0%, 100% { transform: translateY(0px) translateX(0px); }
-    35% { transform: translateY(1px) translateX(-2px); }
-    75% { transform: translateY(-3px) translateX(1px); }
+    35% { transform: translateY(0.5px) translateX(-1px); }
+    75% { transform: translateY(-1.5px) translateX(0.5px); }
   }
 
   @keyframes subtle-fade-in {
@@ -255,27 +255,27 @@
   }
 
   .animate-gentle-float-1 {
-    animation: gentle-float-1 35s ease-in-out infinite;
+    animation: gentle-float-1 65s ease-in-out infinite;
   }
 
   .animate-gentle-float-2 {
-    animation: gentle-float-2 42s ease-in-out infinite;
+    animation: gentle-float-2 72s ease-in-out infinite;
   }
 
   .animate-gentle-float-3 {
-    animation: gentle-float-3 38s ease-in-out infinite;
+    animation: gentle-float-3 68s ease-in-out infinite;
   }
 
   .animate-gentle-float-4 {
-    animation: gentle-float-4 40s ease-in-out infinite;
+    animation: gentle-float-4 70s ease-in-out infinite;
   }
 
   .animate-gentle-float-5 {
-    animation: gentle-float-5 45s ease-in-out infinite;
+    animation: gentle-float-5 75s ease-in-out infinite;
   }
 
   .animate-gentle-float-6 {
-    animation: gentle-float-6 37s ease-in-out infinite;
+    animation: gentle-float-6 67s ease-in-out infinite;
   }
 
   .animate-subtle-fade-in {
