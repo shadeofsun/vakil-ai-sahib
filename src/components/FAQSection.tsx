@@ -38,33 +38,35 @@ const FAQSection = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-right font-persian">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-right font-persian rtl">
             سوالات متداول
           </h2>
-          <p className="text-xl text-muted-foreground text-right font-persian leading-relaxed">
+          <p className="text-xl text-muted-foreground text-right font-persian leading-relaxed rtl">
             پاسخ سوالات رایج درباره خدمات Vakil.My را اینجا بیابید
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <Accordion type="single" collapsible className="space-y-6">
-          {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={`item-${index}`}
-              className="bg-card rounded-2xl border border-border shadow-soft overflow-hidden hover:shadow-medium hover:border-accent/30 transition-all duration-300"
-            >
-              <AccordionTrigger className="px-8 py-6 text-right font-persian font-semibold text-lg hover:no-underline hover:bg-muted/30 transition-all duration-300 [&>svg]:transition-transform [&>svg]:duration-300">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="px-8 pb-8 text-right font-persian text-muted-foreground leading-relaxed text-base border-t border-border/30">
-                <div className="pt-4">
-                  {faq.answer}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="rtl">
+          <Accordion type="single" collapsible className="space-y-6">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-card rounded-2xl border border-border shadow-soft overflow-hidden hover:shadow-medium hover:border-accent/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-8 py-6 text-right font-persian font-semibold text-lg hover:no-underline hover:bg-muted/30 transition-all duration-300 [&>svg]:transition-transform [&>svg]:duration-300 rtl">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-8 text-right font-persian text-muted-foreground leading-relaxed text-base border-t border-border/30 rtl">
+                  <div className="pt-4">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
 
         {/* Contact for more questions */}
         <div className="text-center mt-12">

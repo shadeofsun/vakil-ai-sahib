@@ -84,7 +84,7 @@ const RequestModal = ({ isOpen, onClose }: RequestModalProps) => {
           </DialogTitle>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-6">
+        <form onSubmit={handleSubmit} className="space-y-6 mt-6 rtl">
           {/* عنوان درخواست */}
           <div className="space-y-2">
             <Label htmlFor="title" className="text-right block font-persian">
@@ -95,7 +95,8 @@ const RequestModal = ({ isOpen, onClose }: RequestModalProps) => {
               value={formData.title}
               onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
               placeholder="مثال: تهیه قرارداد خرید و فروش آپارتمان"
-              className="text-right font-persian"
+              className="text-right font-persian rtl"
+              dir="rtl"
               required
             />
           </div>
@@ -113,14 +114,14 @@ const RequestModal = ({ isOpen, onClose }: RequestModalProps) => {
               {services.map((service) => {
                 const Icon = service.icon;
                 return (
-                  <div key={service.id} className="flex items-center space-x-2 space-x-reverse">
+                  <div key={service.id} className="flex items-center gap-3 rtl">
                     <RadioGroupItem value={service.id} id={service.id} />
                     <Label 
                       htmlFor={service.id} 
-                      className="flex items-center gap-3 cursor-pointer p-3 rounded-lg border border-border hover:bg-accent/5 transition-colors flex-1"
+                      className="flex items-center gap-3 cursor-pointer p-3 rounded-lg border border-border hover:bg-accent/5 transition-colors flex-1 rtl"
                     >
-                      <Icon className="w-5 h-5 text-accent" />
                       <span className="font-persian">{service.name}</span>
+                      <Icon className="w-5 h-5 text-accent" />
                     </Label>
                   </div>
                 );
@@ -138,7 +139,8 @@ const RequestModal = ({ isOpen, onClose }: RequestModalProps) => {
               value={formData.content}
               onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
               placeholder="لطفاً جزئیات کاملی از درخواست خود ارائه دهید. هر چه اطلاعات بیشتری ارائه دهید، خروجی دقیق‌تری دریافت خواهید کرد."
-              className="min-h-[120px] text-right font-persian"
+              className="min-h-[120px] text-right font-persian rtl"
+              dir="rtl"
               required
             />
           </div>

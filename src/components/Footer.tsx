@@ -99,8 +99,8 @@ const Footer = () => {
               <p className="text-sm text-primary-foreground/80 mb-4 font-persian leading-relaxed">
                 از آخرین اخبار حقوقی و به‌روزرسانی‌های Vakil.My باخبر شوید
               </p>
-              <div className="flex gap-3">
-                <Button variant="premium" size="sm" className="px-6">
+              <div className="flex gap-3 rtl">
+                <Button variant="premium" size="sm" className="px-6 font-persian">
                   عضویت
                   <ArrowLeft className="w-4 h-4 mr-2" />
                 </Button>
@@ -108,6 +108,7 @@ const Footer = () => {
                   type="email" 
                   placeholder="ایمیل شما"
                   className="flex-1 px-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 text-sm text-right font-persian focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                  dir="rtl"
                 />
               </div>
             </div>
