@@ -35,15 +35,18 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 خدمات حقوقی سریع، دقیق و حرفه‌ای با هوش مصنوعی و وکلای پایه یک دادگستری
               </p>
 
-              {/* Mobile Urgency Banner */}
-              <div className="md:hidden bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-                <div className="flex items-center justify-center gap-2 text-red-700">
-                  <svg className="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-sm font-bold font-persian">تخفیف ویژه امروز - ۷۰٪ صرفه‌جویی!</span>
+              {/* Conversion Section - Visible on all devices */}
+              <div className="bg-gradient-success p-6 rounded-2xl text-center shadow-large">
+                <div className="text-white">
+                  <div className="text-2xl md:text-3xl font-bold mb-2 font-persian">فقط ۱۰ دقیقه!</div>
+                  <div className="text-lg md:text-xl mb-4 font-persian">دادخواست شما آماده می‌شود</div>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 inline-block">
+                    <div className="text-3xl md:text-4xl font-bold">۲۷۰,۰۰۰</div>
+                    <div className="text-sm md:text-base font-persian">تومان (به جای ۵ میلیون!)</div>
+                  </div>
                 </div>
               </div>
+
 
               {/* Services Quick Overview */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-8">
@@ -142,29 +145,9 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
               </div>
             </div>
 
-            {/* Mobile-First Conversion Section */}
-            <div className="md:hidden bg-gradient-to-r from-primary to-accent p-6 rounded-2xl text-center mb-6 shadow-lg">
-              <div className="text-white">
-                <div className="text-2xl font-bold mb-2 font-persian">فقط ۱۰ دقیقه!</div>
-                <div className="text-lg mb-3 font-persian">دادخواست شما آماده می‌شود</div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-4">
-                  <div className="text-3xl font-bold">۲۷۰,۰۰۰</div>
-                  <div className="text-sm font-persian">تومان (به جای ۵ میلیون!)</div>
-                </div>
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  onClick={onStartNowClick}
-                  className="w-full text-lg py-4 font-persian bg-white text-primary hover:bg-gray-100 animate-pulse"
-                >
-                  همین الان شروع کنید
-                  <ArrowLeft className="w-6 h-6 mr-3" />
-                </Button>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end pt-4">
+            <div className="flex justify-center lg:justify-end pt-4">
               <Button 
                 variant="hero" 
                 size="lg" 
@@ -173,10 +156,7 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
               >
                 <span className="relative z-10">اکنون شروع کنید</span>
                 <ArrowLeft className="w-6 h-6 mr-3 relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </Button>
-              <Button variant="minimal" size="lg" className="text-lg px-10 py-6 font-persian hidden md:block">
-                مشاهده نمونه کارها
+                <div className="absolute inset-0 bg-gradient-success transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Button>
             </div>
 

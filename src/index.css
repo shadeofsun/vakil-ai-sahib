@@ -8,50 +8,52 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Navy & Gold */
+    /* Brand Colors - Vibrant Persian Tech */
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 30% 12%;
 
-    /* Primary - Professional Navy */
-    --primary: 215 45% 15%;
+    /* Primary - Deep Persian Blue */
+    --primary: 220 85% 30%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 215 45% 25%;
+    --primary-glow: 220 75% 45%;
 
-    /* Secondary - Premium Gold */
-    --secondary: 38 85% 65%;
-    --secondary-foreground: 215 45% 15%;
+    /* Secondary - Warm Orange */
+    --secondary: 25 95% 55%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Muted & Subtle */
-    --muted: 215 15% 97%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 20% 55%;
 
-    /* Accent - Refined Gold */
-    --accent: 38 85% 65%;
-    --accent-foreground: 215 45% 15%;
+    /* Accent - Emerald Green */
+    --accent: 165 85% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 92%;
-    --input: 215 15% 92%;
-    --ring: 215 45% 15%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 85% 30%;
 
     /* Brand Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 45% 15%) 0%, hsl(215 45% 25%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(38 85% 65%) 0%, hsl(38 75% 55%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(215 15% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 30%) 0%, hsl(220 75% 45%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(30 90% 50%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(165 85% 40%) 0%, hsl(170 80% 35%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(215 25% 15% / 0.1);
-    --shadow-medium: 0 8px 25px -8px hsl(215 25% 15% / 0.15);
-    --shadow-large: 0 20px 40px -15px hsl(215 25% 15% / 0.2);
-    --shadow-glow: 0 0 0 1px hsl(38 85% 65% / 0.3);
+    --shadow-soft: 0 2px 8px -2px hsl(220 30% 12% / 0.12);
+    --shadow-medium: 0 8px 25px -8px hsl(220 30% 12% / 0.18);
+    --shadow-large: 0 20px 40px -15px hsl(220 30% 12% / 0.25);
+    --shadow-glow: 0 0 0 1px hsl(165 85% 40% / 0.4);
+    --shadow-premium: 0 10px 30px -10px hsl(25 95% 55% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -151,6 +153,10 @@
 
   .bg-gradient-subtle {
     background: var(--gradient-subtle);
+  }
+
+  .bg-gradient-success {
+    background: var(--gradient-success);
   }
 
   .shadow-soft {
