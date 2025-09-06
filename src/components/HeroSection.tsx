@@ -35,30 +35,13 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 خدمات حقوقی سریع، دقیق و حرفه‌ای با هوش مصنوعی و وکلای پایه یک دادگستری
               </p>
 
-              {/* Conversion Section - All Devices */}
-              <div className="bg-gradient-conversion text-white p-6 md:p-8 rounded-3xl text-center shadow-conversion border border-accent/20 my-6">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="text-2xl md:text-3xl font-bold font-persian animate-pulse">
-                    فقط ۱۰ دقیقه!
-                  </div>
-                  <div className="text-lg md:text-xl font-persian">
-                    دادخواست شما آماده می‌شود
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 md:p-6 w-full max-w-sm">
-                    <div className="text-3xl md:text-4xl font-bold mb-2">۲۷۰,۰۰۰</div>
-                    <div className="text-sm md:text-base font-persian opacity-90">
-                      تومان (به جای ۵ میلیون!)
-                    </div>
-                  </div>
-                  <Button 
-                    variant="secondary" 
-                    size="lg" 
-                    onClick={onStartNowClick}
-                    className="w-full max-w-sm text-lg py-4 font-persian bg-white text-primary hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-                  >
-                    همین الان شروع کنید
-                    <ArrowLeft className="w-6 h-6 mr-3" />
-                  </Button>
+              {/* Mobile Urgency Banner */}
+              <div className="md:hidden bg-red-50 border border-red-200 rounded-xl p-4 my-4">
+                <div className="flex items-center justify-center gap-2 text-red-700">
+                  <svg className="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm font-bold font-persian">تخفیف ویژه امروز - ۷۰٪ صرفه‌جویی!</span>
                 </div>
               </div>
 
@@ -159,6 +142,26 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
               </div>
             </div>
 
+            {/* Mobile-First Conversion Section */}
+            <div className="md:hidden bg-gradient-to-r from-primary to-accent p-6 rounded-2xl text-center mb-6 shadow-lg">
+              <div className="text-white">
+                <div className="text-2xl font-bold mb-2 font-persian">فقط ۱۰ دقیقه!</div>
+                <div className="text-lg mb-3 font-persian">دادخواست شما آماده می‌شود</div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-4">
+                  <div className="text-3xl font-bold">۲۷۰,۰۰۰</div>
+                  <div className="text-sm font-persian">تومان (به جای ۵ میلیون!)</div>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={onStartNowClick}
+                  className="w-full text-lg py-4 font-persian bg-white text-primary hover:bg-gray-100 animate-pulse"
+                >
+                  همین الان شروع کنید
+                  <ArrowLeft className="w-6 h-6 mr-3" />
+                </Button>
+              </div>
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end pt-4">
@@ -231,6 +234,13 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 </div>
               </div>
 
+              {/* Mobile Conversion Booster - Only visible on mobile */}
+              <div className="absolute top-4 left-4 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-xl shadow-lg animate-pulse z-20">
+                <div className="text-center">
+                  <div className="text-sm font-bold font-persian">۲۷۰ هزار تومان</div>
+                  <div className="text-xs font-persian">تا ۱۰ دقیقه آماده!</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
