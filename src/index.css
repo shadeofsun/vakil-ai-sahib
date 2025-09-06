@@ -8,52 +8,52 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Corporate */
+    /* Brand Colors - Professional Legal */
     --background: 0 0% 100%;
-    --foreground: 210 30% 8%;
+    --foreground: 210 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 30% 8%;
+    --card-foreground: 210 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 30% 8%;
+    --popover-foreground: 210 20% 20%;
 
-    /* Primary - Deep Corporate Blue */
-    --primary: 210 100% 20%;
+    /* Primary - Navy Blue */
+    --primary: 210 100% 15%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 90% 35%;
+    --primary-glow: 210 85% 25%;
 
-    /* Secondary - Elegant Gray */
-    --secondary: 210 15% 25%;
+    /* Secondary - Charcoal Gray */
+    --secondary: 210 10% 35%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted & Subtle */
-    --muted: 210 20% 98%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 50%;
 
-    /* Accent - Professional Gold */
-    --accent: 45 100% 60%;
-    --accent-foreground: 210 30% 8%;
+    /* Accent - Sophisticated Gold */
+    --accent: 38 70% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 92%;
-    --input: 210 20% 92%;
-    --ring: 210 100% 20%;
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 210 100% 15%;
 
     /* Brand Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 20%) 0%, hsl(210 90% 35%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(45 100% 60%) 0%, hsl(40 95% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 15%) 0%, hsl(210 85% 25%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(38 70% 50%) 0%, hsl(35 65% 45%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(210 100% 20%) 0%, hsl(45 100% 60%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(210 100% 15%) 0%, hsl(38 70% 50%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(210 30% 8% / 0.08);
-    --shadow-medium: 0 8px 25px -8px hsl(210 30% 8% / 0.12);
-    --shadow-large: 0 20px 40px -15px hsl(210 30% 8% / 0.15);
-    --shadow-glow: 0 0 0 1px hsl(45 100% 60% / 0.3);
-    --shadow-premium: 0 10px 30px -10px hsl(210 100% 20% / 0.2);
+    --shadow-soft: 0 2px 8px -2px hsl(210 20% 20% / 0.08);
+    --shadow-medium: 0 8px 25px -8px hsl(210 20% 20% / 0.12);
+    --shadow-large: 0 20px 40px -15px hsl(210 20% 20% / 0.15);
+    --shadow-glow: 0 0 0 1px hsl(38 70% 50% / 0.2);
+    --shadow-premium: 0 10px 30px -10px hsl(210 100% 15% / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -195,25 +195,24 @@
     50% { transform: translateY(-10px) rotate(2deg); }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { 
-      transform: scale(1);
-      box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  @keyframes gentle-orbit {
+    0% { 
+      transform: rotate(0deg) translateX(5px) rotate(0deg);
+      opacity: 0.8;
     }
     50% { 
-      transform: scale(1.05);
-      box-shadow: 0 0 30px hsl(var(--accent) / 0.5);
+      opacity: 1;
+    }
+    100% { 
+      transform: rotate(360deg) translateX(5px) rotate(-360deg);
+      opacity: 0.8;
     }
   }
 
-  @keyframes bounce-in {
+  @keyframes subtle-fade-in {
     0% { 
-      transform: translateY(20px) scale(0.8);
+      transform: translateY(10px) scale(0.95);
       opacity: 0;
-    }
-    60% { 
-      transform: translateY(-5px) scale(1.05);
-      opacity: 1;
     }
     100% { 
       transform: translateY(0) scale(1);
@@ -221,16 +220,29 @@
     }
   }
 
+  @keyframes soft-glow {
+    0%, 100% { 
+      box-shadow: 0 4px 20px hsl(var(--primary) / 0.1);
+    }
+    50% { 
+      box-shadow: 0 8px 30px hsl(var(--primary) / 0.2);
+    }
+  }
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  .animate-gentle-orbit {
+    animation: gentle-orbit 20s linear infinite;
   }
 
-  .animate-bounce-in {
-    animation: bounce-in 0.6s ease-out forwards;
+  .animate-subtle-fade-in {
+    animation: subtle-fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-soft-glow {
+    animation: soft-glow 4s ease-in-out infinite;
   }
 
   /* Better button focus */

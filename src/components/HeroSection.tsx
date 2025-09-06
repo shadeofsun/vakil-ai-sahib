@@ -40,16 +40,16 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                       style={{
                         transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-                        animationDelay: service.delay
+                        animationDelay: `${index * 0.2}s`
                       }}
                     >
-                      <div className="animate-bounce-in">
-                        <div className="bg-white shadow-large rounded-2xl p-6 border border-border/20 hover:border-accent/40 transition-all duration-500 hover:shadow-glow group animate-pulse-glow">
+                      <div className="animate-subtle-fade-in">
+                        <div className="bg-white shadow-medium rounded-2xl p-5 border border-border/30 hover:border-accent/20 transition-all duration-700 hover:shadow-glow group animate-gentle-orbit">
                           <div className="text-center">
-                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition-all duration-300">
-                              <service.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
+                            <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/10 transition-all duration-500">
+                              <service.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-500" />
                             </div>
-                            <h3 className="text-sm font-bold text-foreground font-persian group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-sm font-semibold text-foreground font-persian group-hover:text-primary transition-colors duration-500">
                               {service.name}
                             </h3>
                           </div>
@@ -61,7 +61,7 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 
                 {/* Center Logo/Badge */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-gradient-hero text-white p-8 rounded-full shadow-large animate-float">
+                  <div className="bg-gradient-hero text-white p-8 rounded-full shadow-large animate-soft-glow">
                     <div className="text-center">
                       <div className="text-2xl font-bold mb-1">AI</div>
                       <div className="text-xs font-persian">قانونی</div>
