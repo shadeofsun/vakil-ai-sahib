@@ -159,6 +159,10 @@
   .bg-gradient-subtle-premium {
     background: var(--gradient-subtle);
   }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
 }
 
 /* Keyframe Animations */
