@@ -1,51 +1,72 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Shield, Scale, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-legal-ai.jpg";
+import { ArrowLeft, Shield, Scale, Zap, FileText, MessageSquare, Users, Briefcase, ClipboardList } from "lucide-react";
 
 interface HeroSectionProps {
   onStartNowClick: () => void;
 }
 
 const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
+  const services = [
+    { name: "دادخواست", icon: FileText, delay: "0s" },
+    { name: "لایحه", icon: Scale, delay: "0.2s" },
+    { name: "شکواییه", icon: MessageSquare, delay: "0.4s" },
+    { name: "قرارداد", icon: Briefcase, delay: "0.6s" },
+    { name: "اظهارنامه", icon: ClipboardList, delay: "0.8s" },
+    { name: "مشاوره", icon: Users, delay: "1s" }
+  ];
+
   return (
     <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(13,42,148,0.15),rgba(255,255,255,0))]"></div>
       
       <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-8rem)]">
-          {/* Image Side - Left on Desktop */}
+          {/* Animated Services Icons - Left Side */}
           <div className="lg:col-span-5 order-1">
-            <div className="relative group">
-              {/* Main Image Container */}
-              <div className="relative shadow-large rounded-3xl overflow-hidden bg-gradient-hero p-2">
-                <img 
-                  src={heroImage} 
-                  alt="Vakil.My Legal AI Platform - پلتفرم هوش مصنوعی حقوقی"
-                  className="w-full h-auto rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent rounded-2xl"></div>
-              </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-accent text-accent-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite] z-10">
-                <div className="text-center">
-                  <div className="text-xl md:text-3xl font-bold">۷۰٪</div>
-                  <div className="text-[10px] md:text-xs font-persian">کاهش هزینه</div>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-secondary text-secondary-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite_1.5s] z-10">
-                <div className="text-center">
-                  <div className="text-xl md:text-3xl font-bold">۹۵٪</div>
-                  <div className="text-[10px] md:text-xs font-persian">رضایت مشتری</div>
-                </div>
-              </div>
-              
-              <div className="absolute top-1/2 -right-6 md:-right-12 bg-card text-foreground p-3 md:p-4 rounded-lg md:rounded-xl shadow-soft border border-border animate-[float_3s_ease-in-out_infinite_0.5s] z-10">
-                <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-primary">AI</div>
-                  <div className="text-[10px] md:text-xs font-persian">هوش مصنوعی</div>
+            <div className="relative">
+              {/* Background Circle */}
+              <div className="w-full max-w-md mx-auto aspect-square bg-gradient-to-br from-primary/5 to-accent/10 rounded-full relative">
+                {/* Animated Service Icons */}
+                {services.map((service, index) => {
+                  const angle = (index * 60) * Math.PI / 180; // 360/6 = 60 degrees apart
+                  const radius = 120;
+                  const x = Math.cos(angle) * radius;
+                  const y = Math.sin(angle) * radius;
+                  
+                  return (
+                    <div
+                      key={service.name}
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                      style={{
+                        transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                        animationDelay: service.delay
+                      }}
+                    >
+                      <div className="animate-bounce-in">
+                        <div className="bg-white shadow-large rounded-2xl p-6 border border-border/20 hover:border-accent/40 transition-all duration-500 hover:shadow-glow group animate-pulse-glow">
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition-all duration-300">
+                              <service.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
+                            </div>
+                            <h3 className="text-sm font-bold text-foreground font-persian group-hover:text-primary transition-colors duration-300">
+                              {service.name}
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+                
+                {/* Center Logo/Badge */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="bg-gradient-hero text-white p-8 rounded-full shadow-large animate-float">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold mb-1">AI</div>
+                      <div className="text-xs font-persian">قانونی</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,52 +108,14 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
 
             {/* Services Quick Overview - Compact Grid */}
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+              {services.map((service, index) => (
+                <div key={service.name} className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
+                  <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
+                    <service.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <h3 className="text-xs font-semibold text-foreground font-persian">{service.name}</h3>
                 </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">دادخواست</h3>
-              </div>
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <Scale className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">لایحه</h3>
-              </div>
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">شکواییه</h3>
-              </div>
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">قرارداد</h3>
-              </div>
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">اظهارنامه</h3>
-              </div>
-              <div className="text-center p-3 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xs font-semibold text-foreground font-persian">مشاوره</h3>
-              </div>
+              ))}
             </div>
 
             {/* Features */}
