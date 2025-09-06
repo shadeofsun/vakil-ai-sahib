@@ -35,6 +35,16 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 خدمات حقوقی سریع، دقیق و حرفه‌ای با هوش مصنوعی و وکلای پایه یک دادگستری
               </p>
 
+              {/* Mobile Urgency Banner */}
+              <div className="md:hidden bg-red-50 border border-red-200 rounded-xl p-4 my-4">
+                <div className="flex items-center justify-center gap-2 text-red-700">
+                  <svg className="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm font-bold font-persian">تخفیف ویژه امروز - ۷۰٪ صرفه‌جویی!</span>
+                </div>
+              </div>
+
               {/* Services Quick Overview */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 my-8">
                 <div className="text-center p-4 bg-card/50 backdrop-blur-sm rounded-xl border border-border/20 hover:border-accent/30 transition-all duration-300">
@@ -132,18 +142,40 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
               </div>
             </div>
 
+            {/* Mobile-First Conversion Section */}
+            <div className="md:hidden bg-gradient-to-r from-primary to-accent p-6 rounded-2xl text-center mb-6 shadow-lg">
+              <div className="text-white">
+                <div className="text-2xl font-bold mb-2 font-persian">فقط ۱۰ دقیقه!</div>
+                <div className="text-lg mb-3 font-persian">دادخواست شما آماده می‌شود</div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-4">
+                  <div className="text-3xl font-bold">۲۷۰,۰۰۰</div>
+                  <div className="text-sm font-persian">تومان (به جای ۵ میلیون!)</div>
+                </div>
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={onStartNowClick}
+                  className="w-full text-lg py-4 font-persian bg-white text-primary hover:bg-gray-100 animate-pulse"
+                >
+                  همین الان شروع کنید
+                  <ArrowLeft className="w-6 h-6 mr-3" />
+                </Button>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end pt-4">
               <Button 
                 variant="hero" 
                 size="lg" 
                 onClick={onStartNowClick}
-                className="text-lg px-10 py-6 font-persian"
+                className="text-lg px-10 py-6 font-persian relative overflow-hidden group"
               >
-                اکنون شروع کنید
-                <ArrowLeft className="w-6 h-6 mr-3" />
+                <span className="relative z-10">اکنون شروع کنید</span>
+                <ArrowLeft className="w-6 h-6 mr-3 relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Button>
-              <Button variant="minimal" size="lg" className="text-lg px-10 py-6 font-persian">
+              <Button variant="minimal" size="lg" className="text-lg px-10 py-6 font-persian hidden md:block">
                 مشاهده نمونه کارها
               </Button>
             </div>
@@ -180,25 +212,33 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
               </div>
               
-              {/* Floating Elements */}
-              <div className="absolute -top-6 -left-6 bg-accent text-accent-foreground p-6 rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite] z-10">
+              {/* Floating Elements - Mobile Optimized */}
+              <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-accent text-accent-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite] z-10">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">۷۰٪</div>
-                  <div className="text-xs font-persian">کاهش هزینه</div>
+                  <div className="text-xl md:text-3xl font-bold">۷۰٪</div>
+                  <div className="text-[10px] md:text-xs font-persian">کاهش هزینه</div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite_1.5s] z-10">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite_1.5s] z-10">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">۹۵٪</div>
-                  <div className="text-xs font-persian">رضایت مشتری</div>
+                  <div className="text-xl md:text-3xl font-bold">۹۵٪</div>
+                  <div className="text-[10px] md:text-xs font-persian">رضایت مشتری</div>
                 </div>
               </div>
               
-              <div className="absolute top-1/2 -right-12 bg-card text-foreground p-4 rounded-xl shadow-soft border border-border animate-[float_3s_ease-in-out_infinite_0.5s] z-10">
+              <div className="absolute top-1/2 -right-6 md:-right-12 bg-card text-foreground p-3 md:p-4 rounded-lg md:rounded-xl shadow-soft border border-border animate-[float_3s_ease-in-out_infinite_0.5s] z-10">
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent">AI</div>
-                  <div className="text-xs font-persian">هوش مصنوعی</div>
+                  <div className="text-lg md:text-xl font-bold text-accent">AI</div>
+                  <div className="text-[10px] md:text-xs font-persian">هوش مصنوعی</div>
+                </div>
+              </div>
+
+              {/* Mobile Conversion Booster - Only visible on mobile */}
+              <div className="absolute top-4 left-4 md:hidden bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 rounded-xl shadow-lg animate-pulse z-20">
+                <div className="text-center">
+                  <div className="text-sm font-bold font-persian">۲۷۰ هزار تومان</div>
+                  <div className="text-xs font-persian">تا ۱۰ دقیقه آماده!</div>
                 </div>
               </div>
             </div>
