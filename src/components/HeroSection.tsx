@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Shield, Scale, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-legal-ai.jpg";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onStartNowClick: () => void;
+}
+
+const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Background decoration */}
@@ -70,7 +74,12 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end pt-4">
-              <Button variant="hero" size="lg" className="text-lg px-10 py-6 font-persian">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                onClick={onStartNowClick}
+                className="text-lg px-10 py-6 font-persian"
+              >
                 اکنون شروع کنید
                 <ArrowLeft className="w-6 h-6 mr-3" />
               </Button>

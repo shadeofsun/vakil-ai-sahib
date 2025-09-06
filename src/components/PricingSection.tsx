@@ -40,7 +40,11 @@ const plans = [
   }
 ];
 
-const PricingSection = () => {
+interface PricingSectionProps {
+  onStartNowClick: () => void;
+}
+
+const PricingSection = ({ onStartNowClick }: PricingSectionProps) => {
   return (
     <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -114,6 +118,7 @@ const PricingSection = () => {
               <Button 
                 variant={plan.ctaVariant} 
                 size="lg" 
+                onClick={onStartNowClick}
                 className="w-full font-persian text-lg py-4 transition-all duration-300 hover:scale-105"
               >
                 {plan.ctaText}
