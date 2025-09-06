@@ -198,38 +198,39 @@ const HeroSection = ({ onStartNowClick }: HeroSectionProps) => {
 
           {/* Image Side */}
           <div className="relative order-1 lg:order-2">
-            <div className="relative group max-w-lg mx-auto">
-              {/* Main Image Container - Professional Layout */}
-              <div className="relative shadow-large rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+            <div className="relative group">
+              {/* Main Image Container */}
+              <div className="relative shadow-large rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5 p-2">
                 <img 
                   src={heroImage} 
                   alt="Vakil.My Legal AI Platform - پلتفرم هوش مصنوعی حقوقی"
-                  className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-auto rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
               </div>
               
-              {/* Floating Stats - Better Positioned */}
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground p-4 rounded-xl shadow-medium animate-[float_3s_ease-in-out_infinite] z-10">
+              {/* Floating Elements - Mobile Optimized */}
+              <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-accent text-accent-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite] z-10">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">۷۰٪</div>
-                  <div className="text-xs font-persian">کاهش هزینه</div>
+                  <div className="text-xl md:text-3xl font-bold">۷۰٪</div>
+                  <div className="text-[10px] md:text-xs font-persian">کاهش هزینه</div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-medium animate-[float_3s_ease-in-out_infinite_1.5s] z-10">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-medium animate-[float_3s_ease-in-out_infinite_1.5s] z-10">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">۹۵٪</div>
-                  <div className="text-xs font-persian">رضایت مشتری</div>
+                  <div className="text-xl md:text-3xl font-bold">۹۵٪</div>
+                  <div className="text-[10px] md:text-xs font-persian">رضایت مشتری</div>
                 </div>
               </div>
               
-              <div className="absolute top-1/2 -translate-y-1/2 -left-6 bg-card text-foreground p-3 rounded-lg shadow-soft border border-border animate-[float_3s_ease-in-out_infinite_0.5s] z-10">
+              <div className="absolute top-1/2 -right-6 md:-right-12 bg-card text-foreground p-3 md:p-4 rounded-lg md:rounded-xl shadow-soft border border-border animate-[float_3s_ease-in-out_infinite_0.5s] z-10">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-accent">AI</div>
-                  <div className="text-xs font-persian">هوش مصنوعی</div>
+                  <div className="text-lg md:text-xl font-bold text-accent">AI</div>
+                  <div className="text-[10px] md:text-xs font-persian">هوش مصنوعی</div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
