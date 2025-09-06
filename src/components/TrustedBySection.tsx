@@ -22,20 +22,20 @@ const TrustedBySection = () => {
         </div>
 
         {/* Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 items-center">
           {brands.map((brand, index) => (
             <div 
               key={index}
-              className="group flex flex-col items-center justify-center p-6 rounded-lg hover:bg-muted/50 transition-smooth"
+              className="group flex flex-col items-center justify-center p-6 lg:p-8 rounded-2xl hover:bg-muted/50 transition-all duration-300 border border-transparent hover:border-border/50"
             >
               {/* Logo Placeholder */}
-              <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-bounce">
-                <span className="text-xl font-bold text-primary">
+              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-soft group-hover:shadow-medium">
+                <span className="text-xl lg:text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
                   {brand.logo}
                 </span>
               </div>
               {/* Brand Name */}
-              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-smooth font-persian">
+              <span className="text-sm lg:text-base font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 font-persian text-center">
                 {brand.name}
               </span>
             </div>

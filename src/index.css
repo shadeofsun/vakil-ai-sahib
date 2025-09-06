@@ -122,7 +122,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'IRANSans', sans-serif;
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   /* RTL Support for Persian */
@@ -175,6 +179,46 @@
 
   /* Persian Font Support */
   .font-persian {
-    font-family: 'IRANSans', 'Inter', sans-serif;
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Enhanced animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Better button focus */
+  .focus\:ring-4:focus {
+    box-shadow: 0 0 0 4px hsl(var(--ring) / 0.3);
+  }
+
+  /* Backdrop effects */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Text selection */
+  ::selection {
+    background-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--accent-foreground));
+  }
+
+  /* Focus visible */
+  .focus-visible:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Image optimization */
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

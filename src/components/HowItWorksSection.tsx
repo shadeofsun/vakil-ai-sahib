@@ -42,34 +42,35 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {steps.map((step, index) => (
-            <div key={index} className="text-center group">
-              {/* Step Number & Icon */}
-              <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-bounce shadow-medium">
-                  <step.icon className="w-8 h-8 text-primary-foreground" />
+        <div className="relative">
+          {/* Connection Line - Desktop Only */}
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-16">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center group relative">
+                {/* Step Number & Icon */}
+                <div className="relative mb-8">
+                  <div className="w-24 h-24 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-medium group-hover:shadow-large">
+                    <step.icon className="w-10 h-10 text-primary-foreground" />
+                  </div>
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-accent rounded-2xl flex items-center justify-center text-accent-foreground font-bold text-lg shadow-soft">
+                    {step.number}
+                  </div>
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-sm shadow-soft">
-                  {step.number}
-                </div>
-                {/* Connection Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 right-full w-full h-0.5 bg-gradient-to-l from-border to-transparent"></div>
-                )}
-              </div>
 
-              {/* Content */}
-              <div className="text-right">
-                <h3 className="text-xl font-bold mb-3 text-foreground font-persian">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed font-persian">
-                  {step.description}
-                </p>
+                {/* Content */}
+                <div className="text-right px-4">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4 text-foreground font-persian group-hover:text-primary transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed font-persian text-base lg:text-lg group-hover:text-foreground/80 transition-colors duration-300">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Features */}

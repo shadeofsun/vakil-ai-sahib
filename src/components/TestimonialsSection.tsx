@@ -57,38 +57,38 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-card rounded-xl p-6 shadow-soft border border-border hover:shadow-medium transition-smooth relative"
+              className="bg-card rounded-2xl p-8 shadow-soft border border-border hover:shadow-medium hover:border-accent/30 transition-all duration-300 relative group hover:-translate-y-1"
             >
               {/* Quote Icon */}
-              <div className="absolute top-4 left-4">
-                <Quote className="w-6 h-6 text-accent/30" />
+              <div className="absolute top-6 left-6 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                <Quote className="w-8 h-8 text-accent" />
               </div>
 
               {/* Stars */}
-              <div className="flex justify-end gap-1 mb-4">
+              <div className="flex justify-end gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  <Star key={i} className="w-5 h-5 fill-accent text-accent group-hover:scale-110 transition-transform duration-200" />
                 ))}
               </div>
 
               {/* Content */}
-              <div className="text-right mb-6">
-                <p className="text-muted-foreground leading-relaxed font-persian">
+              <div className="text-right mb-8">
+                <p className="text-muted-foreground leading-relaxed font-persian text-lg group-hover:text-foreground transition-colors duration-300">
                   "{testimonial.content}"
                 </p>
               </div>
 
               {/* Author */}
-              <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-end gap-4 pt-4 border-t border-border group-hover:border-accent/30 transition-colors duration-300">
                 <div className="text-right">
-                  <div className="font-bold text-foreground font-persian">
+                  <div className="font-bold text-foreground font-persian text-lg">
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-muted-foreground font-persian">
                     {testimonial.title}
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-gradient-premium rounded-full flex items-center justify-center text-accent-foreground font-bold text-sm">
+                <div className="w-14 h-14 bg-gradient-premium rounded-2xl flex items-center justify-center text-accent-foreground font-bold text-lg shadow-soft group-hover:scale-110 transition-transform duration-300">
                   {testimonial.avatar}
                 </div>
               </div>

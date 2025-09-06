@@ -1,4 +1,4 @@
-import { Scale, FileText, Gavel, Users, Shield, MessageSquare } from "lucide-react";
+import { Scale, FileText, Gavel, Users, Shield, MessageSquare, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -59,38 +59,46 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group bg-card rounded-xl p-8 shadow-soft hover:shadow-medium transition-smooth border border-border hover:border-accent/50"
+              className="group bg-card rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-border hover:border-accent/50 hover:-translate-y-2"
             >
               {/* Icon */}
               <div className="flex justify-end mb-6">
-                <div className="p-3 bg-gradient-premium rounded-lg group-hover:scale-110 transition-bounce">
-                  <service.icon className="w-6 h-6 text-accent-foreground" />
+                <div className="relative">
+                  <div className="p-4 bg-gradient-premium rounded-2xl group-hover:scale-110 transition-all duration-300 shadow-soft">
+                    <service.icon className="w-8 h-8 text-accent-foreground" />
+                  </div>
+                  <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="text-right">
-                <h3 className="text-xl font-bold mb-3 text-foreground font-persian">
+              <div className="text-right space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-persian group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed font-persian">
+                <p className="text-muted-foreground leading-relaxed font-persian text-lg">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center justify-end gap-2 text-sm">
-                      <span className="text-muted-foreground font-persian">{feature}</span>
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <li key={i} className="flex items-center justify-end gap-3 text-sm group">
+                      <span className="text-muted-foreground font-persian group-hover:text-foreground transition-colors duration-200">
+                        {feature}
+                      </span>
+                      <div className="w-2 h-2 bg-accent rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                     </li>
                   ))}
                 </ul>
 
                 {/* CTA */}
-                <Button variant="minimal" className="w-full font-persian">
-                  شروع کنید
-                </Button>
+                <div className="pt-4">
+                  <Button variant="minimal" className="w-full font-persian text-base py-3 group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-300">
+                    شروع کنید
+                    <ArrowLeft className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

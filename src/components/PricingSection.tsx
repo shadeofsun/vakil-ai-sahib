@@ -55,21 +55,21 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-card rounded-2xl p-8 shadow-soft border ${
+              className={`relative bg-card rounded-3xl p-8 lg:p-10 shadow-soft border transition-all duration-300 ${
                 plan.popular 
-                  ? 'border-accent shadow-glow scale-105' 
-                  : 'border-border hover:border-accent/50'
-              } transition-smooth`}
+                  ? 'border-accent shadow-glow scale-105 lg:scale-110' 
+                  : 'border-border hover:border-accent/50 hover:shadow-medium hover:scale-105'
+              }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-4 right-1/2 transform translate-x-1/2">
-                  <div className="bg-gradient-premium text-accent-foreground px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-medium">
-                    <Star className="w-4 h-4" />
+                <div className="absolute -top-6 right-1/2 transform translate-x-1/2">
+                  <div className="bg-gradient-premium text-accent-foreground px-8 py-3 rounded-2xl text-sm font-bold flex items-center gap-2 shadow-medium">
+                    <Star className="w-5 h-5" />
                     محبوب‌ترین انتخاب
                   </div>
                 </div>
@@ -77,29 +77,33 @@ const PricingSection = () => {
 
               {/* Header */}
               <div className="text-right mb-8">
-                <h3 className="text-2xl font-bold text-foreground mb-2 font-persian">
+                <h3 className="text-3xl font-bold text-foreground mb-3 font-persian">
                   {plan.name}
                 </h3>
-                <p className="text-muted-foreground text-sm font-persian">
+                <p className="text-muted-foreground text-base font-persian leading-relaxed">
                   {plan.description}
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-right mb-8">
-                <div className="flex items-baseline justify-end gap-2">
-                  <span className="text-sm text-muted-foreground font-persian">{plan.currency}</span>
-                  <span className="text-4xl font-bold text-primary">{plan.price}</span>
+              <div className="text-right mb-10">
+                <div className="flex items-baseline justify-end gap-3 mb-2">
+                  <span className="text-lg text-muted-foreground font-persian">{plan.currency}</span>
+                  <span className={`text-5xl lg:text-6xl font-bold ${plan.popular ? 'text-accent' : 'text-primary'}`}>
+                    {plan.price}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1 font-persian">برای هر سند</p>
+                <p className="text-base text-muted-foreground font-persian">برای هر سند</p>
               </div>
 
               {/* Features */}
-              <div className="space-y-4 mb-8">
+              <div className="space-y-5 mb-10">
                 {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground font-persian text-right">
+                  <div key={i} className="flex items-start gap-4 group">
+                    <Check className={`w-6 h-6 mt-0.5 flex-shrink-0 transition-colors duration-200 ${
+                      plan.popular ? 'text-accent' : 'text-primary'
+                    } group-hover:scale-110`} />
+                    <span className="text-base text-muted-foreground font-persian text-right leading-relaxed group-hover:text-foreground transition-colors duration-200">
                       {feature}
                     </span>
                   </div>
@@ -110,10 +114,10 @@ const PricingSection = () => {
               <Button 
                 variant={plan.ctaVariant} 
                 size="lg" 
-                className="w-full font-persian"
+                className="w-full font-persian text-lg py-4 transition-all duration-300 hover:scale-105"
               >
                 {plan.ctaText}
-                <ArrowLeft className="w-5 h-5 mr-2" />
+                <ArrowLeft className="w-6 h-6 mr-3" />
               </Button>
             </div>
           ))}

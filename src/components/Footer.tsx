@@ -94,20 +94,20 @@ const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="mt-6">
-              <h5 className="font-bold mb-2 font-persian">خبرنامه</h5>
-              <p className="text-sm text-primary-foreground/80 mb-3 font-persian">
-                از آخرین اخبار حقوقی باخبر شوید
+            <div className="mt-8 bg-card/10 rounded-2xl p-6 border border-primary-foreground/20">
+              <h5 className="font-bold mb-3 font-persian text-lg">خبرنامه</h5>
+              <p className="text-sm text-primary-foreground/80 mb-4 font-persian leading-relaxed">
+                از آخرین اخبار حقوقی و به‌روزرسانی‌های Vakil.My باخبر شوید
               </p>
-              <div className="flex gap-2">
-                <Button variant="premium" size="sm">
+              <div className="flex gap-3">
+                <Button variant="premium" size="sm" className="px-6">
                   عضویت
-                  <ArrowLeft className="w-4 h-4 mr-1" />
+                  <ArrowLeft className="w-4 h-4 mr-2" />
                 </Button>
                 <input 
                   type="email" 
                   placeholder="ایمیل شما"
-                  className="flex-1 px-3 py-2 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 text-sm text-right"
+                  className="flex-1 px-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 text-sm text-right font-persian focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
                 />
               </div>
             </div>
