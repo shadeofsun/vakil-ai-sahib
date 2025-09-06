@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وکیل.من - سرویس جامع حقوقی آنلاین</title>
-    <meta name="description" content="وکیل.من - دسترسی آسان به خدمات حقوقی با کیفیت، مشاوره آنلاین، تنظیم قرارداد و پیگیری امور حقوقی">
-    <meta name="keywords" content="وکیل آنلاین, مشاوره حقوقی, قرارداد, خدمات حقوقی">
+    <title>Vakil.My - وکیل هوشمند شما</title>
+    <meta name="description" content="تنظیم لایحه، اظهارنامه، قرارداد و شکواییه در 10 دقیقه! خدمات حقوقی سریع، دقیق و حرفه‌ای با هوش مصنوعی">
+    <meta name="keywords" content="وکیل آنلاین, دادخواست, لایحه, شکواییه, قرارداد, اظهارنامه, مشاوره حقوقی">
     <link rel="canonical" href="https://vakil.my">
     
     <!-- Persian Font -->
