@@ -195,18 +195,39 @@
     50% { transform: translateY(-10px) rotate(2deg); }
   }
 
-  @keyframes gentle-orbit {
-    0% { 
-      transform: rotate(0deg) translateX(5px) rotate(0deg);
-      opacity: 0.8;
-    }
-    50% { 
-      opacity: 1;
-    }
-    100% { 
-      transform: rotate(360deg) translateX(5px) rotate(-360deg);
-      opacity: 0.8;
-    }
+  @keyframes gentle-float-1 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-8px) translateX(3px); }
+  }
+
+  @keyframes gentle-float-2 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(5px) translateX(-4px); }
+    66% { transform: translateY(-3px) translateX(2px); }
+  }
+
+  @keyframes gentle-float-3 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    40% { transform: translateY(-6px) translateX(-2px); }
+    80% { transform: translateY(4px) translateX(3px); }
+  }
+
+  @keyframes gentle-float-4 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    30% { transform: translateY(7px) translateX(3px); }
+    70% { transform: translateY(-4px) translateX(-1px); }
+  }
+
+  @keyframes gentle-float-5 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    45% { transform: translateY(-5px) translateX(4px); }
+    85% { transform: translateY(6px) translateX(-3px); }
+  }
+
+  @keyframes gentle-float-6 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    35% { transform: translateY(3px) translateX(-5px); }
+    75% { transform: translateY(-7px) translateX(2px); }
   }
 
   @keyframes subtle-fade-in {
@@ -233,8 +254,28 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  .animate-gentle-orbit {
-    animation: gentle-orbit 20s linear infinite;
+  .animate-gentle-float-1 {
+    animation: gentle-float-1 12s ease-in-out infinite;
+  }
+
+  .animate-gentle-float-2 {
+    animation: gentle-float-2 15s ease-in-out infinite;
+  }
+
+  .animate-gentle-float-3 {
+    animation: gentle-float-3 18s ease-in-out infinite;
+  }
+
+  .animate-gentle-float-4 {
+    animation: gentle-float-4 14s ease-in-out infinite;
+  }
+
+  .animate-gentle-float-5 {
+    animation: gentle-float-5 16s ease-in-out infinite;
+  }
+
+  .animate-gentle-float-6 {
+    animation: gentle-float-6 13s ease-in-out infinite;
   }
 
   .animate-subtle-fade-in {

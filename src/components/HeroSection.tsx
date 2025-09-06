@@ -9,27 +9,39 @@ const HeroSection = ({
   const services = [{
     name: "دادخواست",
     icon: FileText,
-    delay: "0s"
+    delay: "0s",
+    position: "top-8 left-12",
+    animation: "animate-gentle-float-1"
   }, {
     name: "لایحه",
     icon: Scale,
-    delay: "1.2s"
+    delay: "1.2s",
+    position: "top-32 right-8",
+    animation: "animate-gentle-float-2"
   }, {
     name: "شکواییه",
     icon: MessageSquare,
-    delay: "0.7s"
+    delay: "0.7s",
+    position: "top-16 left-1/2 transform -translate-x-1/2",
+    animation: "animate-gentle-float-3"
   }, {
     name: "قرارداد",
     icon: Briefcase,
-    delay: "2.1s"
+    delay: "2.1s",
+    position: "bottom-32 left-16",
+    animation: "animate-gentle-float-4"
   }, {
     name: "اظهارنامه",
     icon: ClipboardList,
-    delay: "0.3s"
+    delay: "0.3s",
+    position: "bottom-8 right-12",
+    animation: "animate-gentle-float-5"
   }, {
     name: "مشاوره",
     icon: Users,
-    delay: "1.8s"
+    delay: "1.8s",
+    position: "bottom-16 left-1/2 transform -translate-x-1/2",
+    animation: "animate-gentle-float-6"
   }];
   return <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Background decoration */}
@@ -44,18 +56,13 @@ const HeroSection = ({
               <div className="w-full max-w-md mx-auto aspect-square bg-gradient-to-br from-primary/5 to-accent/10 rounded-full relative">
                 {/* Animated Service Icons */}
                 {services.map((service, index) => {
-                const angle = index * 60 * Math.PI / 180; // 360/6 = 60 degrees apart
-                const radius = 120;
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
-                return <div key={service.name} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{
-                  transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                return <div key={service.name} className={`absolute ${service.position}`} style={{
                   animationDelay: service.delay
                 }}>
                       <div className="animate-subtle-fade-in" style={{
                     animationDelay: service.delay
                   }}>
-                        <div className="bg-white shadow-medium rounded-2xl p-5 border border-border/30 hover:border-accent/20 transition-all duration-700 hover:shadow-glow group animate-gentle-orbit">
+                        <div className={`bg-white shadow-medium rounded-2xl p-5 border border-border/30 hover:border-accent/20 transition-all duration-700 hover:shadow-glow group ${service.animation}`}>
                           <div className="text-center">
                             <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/10 transition-all duration-500">
                               <service.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-500" />
